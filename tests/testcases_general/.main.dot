@@ -1,0 +1,19 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x1c8be70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#88abfd70",label="{label_entry:\l  %op0 = alloca i32, align 4\l  %op1 = alloca i32, align 4\l  store i32 10, i32* %op0, align 4\l  br label %label2\l}"];
+	Node0x1c8be70 -> Node0x1c8c7c0;
+	Node0x1c8c7c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170",label="{label2:                                           \l  %op3 = load i32, i32* %op0, align 4\l  %op4 = icmp ne i32 %op3, 0\l  br i1 %op4, label %label5, label %label9\l|{<s0>T|<s1>F}}"];
+	Node0x1c8c7c0:s0 -> Node0x1c8c980;
+	Node0x1c8c7c0:s1 -> Node0x1c8c9f0;
+	Node0x1c8c980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170",label="{label5:                                           \l  %op6 = load i32, i32* %op0, align 4\l  %op7 = sub i32 %op6, 1\l  store i32 %op7, i32* %op0, align 4\l  %op8 = load i32, i32* %op0, align 4\l  store i32 %op8, i32* %op1, align 4\l  br label %label13\l}"];
+	Node0x1c8c980 -> Node0x1c8ce60;
+	Node0x1c8c9f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#88abfd70",label="{label9:                                           \l  %op10 = load i32, i32* %op0, align 4\l  %op11 = load i32, i32* %op1, align 4\l  %op12 = add i32 %op10, %op11\l  ret i32 %op12\l}"];
+	Node0x1c8ce60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{label13:                                          \l  %op14 = load i32, i32* %op1, align 4\l  %op15 = icmp ne i32 %op14, 0\l  br i1 %op15, label %label16, label %label19\l|{<s0>T|<s1>F}}"];
+	Node0x1c8ce60:s0 -> Node0x1c8d460;
+	Node0x1c8ce60:s1 -> Node0x1c8d4d0;
+	Node0x1c8d460 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{label16:                                          \l  %op17 = load i32, i32* %op1, align 4\l  %op18 = sub i32 %op17, 1\l  store i32 %op18, i32* %op1, align 4\l  br label %label13\l}"];
+	Node0x1c8d460 -> Node0x1c8ce60;
+	Node0x1c8d4d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170",label="{label19:                                          \l  br label %label2\l}"];
+	Node0x1c8d4d0 -> Node0x1c8c7c0;
+}

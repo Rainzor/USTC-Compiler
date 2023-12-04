@@ -9,7 +9,6 @@ Course Homepage link: https://ustc-compiler-principles.github.io/2023
 ##### Compile the project
 
 ```sh
-cd 2023ustc-jianmu-compiler
 mkdir build
 cd build
 # 使用 cmake 生成 makefile 等文件
@@ -34,7 +33,7 @@ cminusfc -S test.cminus
 cminusfc -S -mem2reg test.cminus
 ```
 
-The test examples you can find in [tests](./2023ustc-jianmu-compiler/tests/testcases_general)
+The test examples you can find in [tests](./tests/testcases_general)
 
 ##### Environment
 
