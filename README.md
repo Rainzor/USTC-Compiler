@@ -18,7 +18,7 @@ cmake ..
 sudo make install
 ```
 
-##### Use it: `test.cmius` for example
+##### Use it: `test.cminus` for example
 
 ```sh
 #Compile to IR without optimization
@@ -42,4 +42,5 @@ The test examples you can find in [tests](./2023ustc-jianmu-compiler/tests/testc
 >
 > WSL2 Ubuntu 22.04.3 LTS
 >
-> flex 2.6.4, bison 3.8.2,GNU gdb12.1,clang llvm 14.0.0
+> flex 2.6.4, bison 3.8.2,GNU gdb12.1,clang LLVM 14.0.0, GCC 11.4.0
+
