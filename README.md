@@ -17,23 +17,27 @@ cmake ..
 sudo make install
 ```
 
-##### Use it: `test.cminus` for example
+##### Compile a cminus file: 
+
+`test.cminus` for example
 
 ```sh
-#Compile to IR without optimization
+#Compile to IR
 cminusfc -emit-llvm test.cminus
-#Compile to IR with optimization
-cminusfc -emit-llvm -mem2reg test.cminus
+#Compile to assembly
+cminusfc -S test.cminus
 ```
 
+(The test examples you can find in [tests](./tests/testcases_general))
+
+##### Take Mem2Reg Optimization
+
 ```sh
-#Compile to assembly without optimization
-cminusfc -S test.cminus
+#Compile to IR with optimization
+cminusfc -emit-llvm -mem2reg test.cminus
 #Compile to assembly with optimization
 cminusfc -S -mem2reg test.cminus
 ```
-
-The test examples you can find in [tests](./tests/testcases_general)
 
 ##### Environment
 
