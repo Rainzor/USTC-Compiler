@@ -16,19 +16,9 @@ void Mem2Reg::run() {
         func_ = &f;
         if (func_->get_basic_blocks().size() >= 1) {
             // 对应伪代码中 phi 指令插入的阶段
-            // for(auto&bb:func_->get_basic_blocks()){
-            //     std::cout<<bb.print();
-            // }
             generate_phi();
-            // std::cout << "\nInsert PhiInst Done\n";
             // 对应伪代码中重命名阶段
-
             rename(func_->get_entry_block());
-            // std::cout << "\nRename Done\n"<<std::endl;
-
-            // for(auto&bb:func_->get_basic_blocks()){
-            //     std::cout<<bb.print();
-            // }
         }
         // 后续 DeadCode 将移除冗余的局部变量的分配空间
     }
@@ -58,17 +48,6 @@ void Mem2Reg::generate_phi() {
             }
         }
     }
-
-    // std::cout<<"Active Variable:\n";
-    // for(auto&p:val_defset_map_){
-    //     std::cout<<p.first->get_name()<<": ";
-    //     for(auto&bb:p.second){
-    //         std::cout<<bb->get_name()<<" ";
-    //     }
-    //     std::cout<<std::endl;
-    // }
-
-
 
     // 步骤二：从支配树获取支配边界信息，并在对应位置插入 phi 指令
     std::queue<BasicBlock*> Defs;

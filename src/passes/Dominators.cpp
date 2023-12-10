@@ -7,8 +7,6 @@ void Dominators::run() {
 
         if (f->get_basic_blocks().size() == 0)
             continue;
-        // std::cout << "Function: " << f->get_name() << std::endl;
-        // std::cout << "Blocks: ";
 
         for (auto &bb1 : f->get_basic_blocks()) {
             auto bb = &bb1;
@@ -17,25 +15,11 @@ void Dominators::run() {
             dom_frontier_.insert({bb, {}});
             dom_tree_succ_blocks_.insert({bb, {}});
         }
-        // std::cout<<std::endl;
-
         // Immediate Domiance
         create_idom(f);
-        // std::cout<<"IDOM:\n";
-        // for(auto&p:idom_){
-        //   std::cout << p.second->get_name() << "->" << p.first->get_name() << std::endl;
-        // }
 
         // Dominance Frontier
         create_dominance_frontier(f);
-        // std::cout<<"Frontier:\n";
-        // for(auto&p:dom_frontier_){
-        //     std::cout<<p.first->get_name()<<"'s frontiers: ";
-        //     for(auto&f:p.second){
-        //         std::cout<<f->get_name()<<" ";
-        //     }
-        //     std::cout<<std::endl;
-        // }
         create_dom_tree_succ(f);
     }
 }
@@ -67,25 +51,21 @@ int Dominators::intersect(int b1, int b2,const std::vector<int> &doms){
 
 void Dominators::create_idom(Function *f) {
     // TODO 分析得到 f 中各个基本块的 idom
-    // int bb_num = f->get_basic_blocks().size();
     auto bb_entry = f->get_entry_block();
     std::unordered_map<BasicBlock *, bool> visited{};
     for(auto&bb1: f->get_basic_blocks()){
         auto bb=&bb1;
         visited.insert({bb,false});
     }
-    // std::vector<BasicBlock*> dfn(bb_num);
     std::vector<BasicBlock*> dfn;
 
     int cnt = 0;
     dfs(dfn,visited,bb_entry,cnt);
     int bb_num = cnt;
-    // std::cout << "Post Order:\n";
     std::unordered_map<BasicBlock *, int> postorder{};
     for(int i=0;i<bb_num;i++){
 
         postorder.insert({dfn[i],i});
-        // std::cout << i << dfn[i]->get_name() << std::endl;
     }
 
 
