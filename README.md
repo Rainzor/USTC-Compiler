@@ -37,7 +37,7 @@ cminusfc -emit-llvm test.cminus
 cminusfc -S test.cminus
 ```
 
-(The test examples you can find in [tests](.Lab/tests/testcases_general))
+(The test examples you can find in [tests](./Lab/tests/testcases_general))
 
 ##### Take Mem2Reg Optimization
 
