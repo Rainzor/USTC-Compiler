@@ -46,4 +46,3 @@ cminusfc -S -mem2reg test.cminus
 > WSL2 Ubuntu 22.04.3 LTS
 >
 > flex 2.6.4, bison 3.8.2,GNU gdb12.1,clang LLVM 14.0.0, GCC 11.4.0
-
