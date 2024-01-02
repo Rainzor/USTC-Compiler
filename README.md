@@ -6,9 +6,18 @@ Course Homepage link: https://ustc-compiler-principles.github.io/2023
 
 ## How to use it
 
+##### Environment
+
+> Windows11 
+>
+> WSL2 Ubuntu 22.04.3 LTS
+>
+> flex 2.6.4, bison 3.8.2,GNU gdb12.1,clang LLVM 14.0.0, GCC 11.4.0
+
 ##### Compile the project
 
 ```sh
+cd Lab
 mkdir build
 cd build
 # 使用 cmake 生成 makefile 等文件
@@ -28,7 +37,7 @@ cminusfc -emit-llvm test.cminus
 cminusfc -S test.cminus
 ```
 
-(The test examples you can find in [tests](./tests/testcases_general))
+(The test examples you can find in [tests](.Lab/tests/testcases_general))
 
 ##### Take Mem2Reg Optimization
 
@@ -39,10 +48,3 @@ cminusfc -emit-llvm -mem2reg test.cminus
 cminusfc -S -mem2reg test.cminus
 ```
 
-##### Environment
-
-> Windows11 
->
-> WSL2 Ubuntu 22.04.3 LTS
->
-> flex 2.6.4, bison 3.8.2,GNU gdb12.1,clang LLVM 14.0.0, GCC 11.4.0
