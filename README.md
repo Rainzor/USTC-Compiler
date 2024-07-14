@@ -19,9 +19,7 @@ Course Homepage link: https://ustc-compiler-principles.github.io/2023
 ```sh
 cd Lab
 mkdir build && cd build
-# 使用 cmake 生成 makefile 等文件
 cmake ..
-# 使用 make 进行编译，指定 install 以正确测试
 sudo make install
 ```
 
