@@ -1,6 +1,5 @@
 # Lab2
 
-> PB20020480 王润泽
 >
 > Compiler
 
